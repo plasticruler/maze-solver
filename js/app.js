@@ -94,7 +94,6 @@ function executeSolveMazeStepGreedy() {
             visited.push(current);
             current.setCellType(_CURRENT);
             mazeIsSolved = true;
-            alert('Early exit detected');
         }
     } else {
         mazeIsSolved = true;
