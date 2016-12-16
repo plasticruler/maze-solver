@@ -6,4 +6,4 @@ In the initial version it uses the depth-first greedy algorithm.
 
 I set the start and end position to the first and last cells in the grid respectively but these can be changed and the code will work the same.
 
-![alt tag](https://raw.githubusercontent.com/skrillex581/maze-solver/Selection_047.png)
+![alt tag](https://raw.githubusercontent.com/skrillex581/maze-solver/master/Selection_047.png)
