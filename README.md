@@ -3,3 +3,7 @@ Generates a random maze, then solves it. Written in Javascript using the p5.js l
 
 # Technicals
 In the initial version it uses the depth-first greedy algorithm.
+
+I set the start and end position to the first and last cells in the grid respectively but these can be changed and the code will work the same.
+
+
