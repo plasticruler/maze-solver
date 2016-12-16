@@ -1,6 +1,6 @@
 /* configs */
-var CANVAS_SIZE = 800;
-var CELL_WIDTH = 80;
+var CANVAS_SIZE = 200;
+var CELL_WIDTH = 20;
 var ROW_COUNT = CANVAS_SIZE / CELL_WIDTH;
 var FRAME_RATE = 60;
 
@@ -20,6 +20,7 @@ var _CURRENT = 3;
 var _OBSTACLE = 4;
 var _START = 5;
 var _END = 6;
+var pause = true;
 
 /** a-star */
 var came_from = [];
@@ -161,6 +162,10 @@ function getCell(i, j) {
     return grid[getIndex(i, j)];
 }
 
+function keyPressed() {
+    pause = !pause;
+}
+
 function removeWall(a, b) {
     var x = a.Column - b.Column;
     if (x === -1) {
@@ -184,11 +189,12 @@ function removeWall(a, b) {
 function draw() {
     background('white');
     if (!solved) {
-        executeMazeBuildStep();
+        if (!pause)
+            executeMazeBuildStep();
     } else {
-        frameRate(60);
-        if (!mazeIsSolved)
-            executeSolveMazeStepGreedy();
+        if (!pause)
+            if (!mazeIsSolved)
+                executeSolveMazeStepGreedy();
     }
     for (var z = 0; z < grid.length; z++) {
         grid[z].show();
