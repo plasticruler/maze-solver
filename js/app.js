@@ -1,5 +1,5 @@
 /* configs */
-var CANVAS_SIZE = 200;
+var CANVAS_SIZE = 500;
 var CELL_WIDTH = 20;
 var ROW_COUNT = CANVAS_SIZE / CELL_WIDTH;
 var FRAME_RATE = 60;
@@ -204,3 +204,6 @@ function draw() {
     stroke('blue');
     rect(0, 0, CANVAS_SIZE-1, CANVAS_SIZE-1);
 }
+
+}
+
