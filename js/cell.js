@@ -18,33 +18,48 @@ var Cell = function(row, col) {
     }
 
     this.show = function() {
-        strokeWeight(5);
+        strokeWeight(2);        
         fill(this.getCellColour());
         stroke('#333399');
-
-        if (this.wallT)
+        rect(col * CELL_WIDTH, row * CELL_WIDTH, CELL_WIDTH+1, CELL_WIDTH+1);
+        
+        if (!this.wallT)
+        {
+            strokeWeight(3);     
+            stroke(this.getCellColour());
+            //stroke('green');
+            
             line(this.Column * CELL_WIDTH,
                 this.Row * CELL_WIDTH,
                 this.Column * CELL_WIDTH + CELL_WIDTH,
                 this.Row * CELL_WIDTH);
+        }
+            
 
-        if (this.wallB)
-            line(this.Column * CELL_WIDTH,
+        if (!this.wallB)
+        {
+            strokeWeight(3);     
+                stroke(this.getCellColour());
+                
+                line(this.Column * CELL_WIDTH,
                 this.Row * CELL_WIDTH + CELL_WIDTH,
                 this.Columncol * CELL_WIDTH + CELL_WIDTH,
                 this.Row * CELL_WIDTH + CELL_WIDTH);
+        }            
 
-        if (this.wallR)
+        if (!this.wallR)
+        {
+            strokeWeight(3);     
+            stroke(this.getCellColour());
             line(col * CELL_WIDTH + CELL_WIDTH, row * CELL_WIDTH, col * CELL_WIDTH + CELL_WIDTH, row * CELL_WIDTH + CELL_WIDTH);
+        }            
 
-
-
-        if (this.wallL)
+        if (!this.wallL)
+        {
+         strokeWeight(3);        
+            stroke(this.getCellColour());
             line(col * CELL_WIDTH, row * CELL_WIDTH, col * CELL_WIDTH, row * CELL_WIDTH + CELL_WIDTH);
-
-
-        noStroke();
-        rect(col * CELL_WIDTH, row * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
+        }         
     }
 
 

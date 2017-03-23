@@ -201,5 +201,6 @@ function draw() {
     }
     noFill();
     strokeWeight(3);
-    rect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+    stroke('blue');
+    rect(0, 0, CANVAS_SIZE-1, CANVAS_SIZE-1);
 }
