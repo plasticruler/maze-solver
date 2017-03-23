@@ -204,6 +204,3 @@ function draw() {
     stroke('blue');
     rect(0, 0, CANVAS_SIZE-1, CANVAS_SIZE-1);
 }
-
-}
-
